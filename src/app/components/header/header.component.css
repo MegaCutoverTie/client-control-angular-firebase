@@ -1,0 +1,7 @@
+.dropdown-menu {
+    display: none;
+    font-size: small;
+  }
+  .dropdown-menu.show {
+    display: block;
+  }

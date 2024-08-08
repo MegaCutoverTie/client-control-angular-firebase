@@ -1,0 +1,96 @@
+<header id="main-header" class="py-2 bg-secondary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    <i class="fas fa-user"></i> Edit Client
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form #clientForm="ngForm" (ngSubmit)="saveClient(clientForm)">
+
+    <section id="actions" class="py-2 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 py-1">
+                    <a routerLink="" class="btn btn-light btn-block">
+                        <i class="fas fa-arrow-left"></i> Back Home
+                    </a>
+                </div>
+                <div class="col-md-3 py-1">
+                    <button type="submit" class="btn btn-success btn-block">
+                        <i class="fas fa-check"></i> Save Client
+                    </button>
+                </div>
+                <div class="col-md-3 py-1">
+                    <a href="#" (click)="deleteClient()" class="btn btn-danger btn-block">
+                        <i class="fas fa-trash"></i> Delete Client
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Edit Client</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                              <label for="name">Name</label>
+                              <input 
+                                type="text" 
+                                name="name" 
+                                class="form-control" 
+                                #name="ngModel" 
+                                [(ngModel)]="client.name"
+                                required
+                                minlength="2">
+                            </div>
+                            <div class="form-group">
+                              <label for="lastname">Last Name</label>
+                              <input 
+                                type="text" 
+                                name="lastname" 
+                                class="form-control" 
+                                #lastname="ngModel" 
+                                [(ngModel)]="client.lastname"
+                                required
+                                minlength="2">
+                            </div>
+                            <div class="form-group">
+                              <label for="email">Email</label>
+                              <input 
+                                type="text" 
+                                name="email" 
+                                class="form-control" 
+                                #email="ngModel" 
+                                [(ngModel)]="client.email"
+                                required
+                                minlength="2">
+                            </div>
+                            <div class="form-group">
+                              <label for="balance">Balance</label>
+                              <input 
+                                type="number" 
+                                name="balance" 
+                                class="form-control" 
+                                #balance="ngModel" 
+                                [(ngModel)]="client.balance"
+                                required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</form>
